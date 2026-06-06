@@ -23,26 +23,28 @@ func attack(charName, charClass string) string {
 
 // обратите внимание на "if else" и на "else"
 func defence(char_name, char_class string) string {
-	if char_class == "warrior" {
+	switch char_class {
+	case "warrior":
 		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(5, 10))
-	} else if char_class == "mage" {
+	case "mage":
 		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(-2, 2))
-	} else if char_class == "healer" {
+	case "healer":
 		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(2, 5))
-	} else {
+	default:
 		return "неизвестный класс персонажа"
 	}
 }
 
 // обратите внимание на "if else" и на "else"
 func special(charName, charClass string) string {
-	if charClass == "warrior" {
+	switch charClass {
+	case "warrior":
 		return fmt.Sprintf("%s применил специальное умение `Выносливость %d`", charName, 80+25)
-	} else if charClass == "mage" {
+	case "mage":
 		return fmt.Sprintf("%s применил специальное умение `Атака %d`", charName, 5+40)
-	} else if charClass == "healer" {
+	case "healer":
 		return fmt.Sprintf("%s применил специальное умение `Защита %d`", charName, 10+30)
-	} else {
+	default:
 		return "неизвестный класс персонажа"
 	}
 }

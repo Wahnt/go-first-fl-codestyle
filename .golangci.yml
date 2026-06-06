@@ -1,0 +1,17 @@
+linters:
+  enable:
+    - gosimple
+    - staticcheck
+    - errcheck
+    - unused
+    - nilerr
+    - prealloc
+
+linters-settings:
+  gosimple:
+    checks: ["all"]
+  staticcheck:
+    checks: ["all"]
+
+issues:
+  fix: true
